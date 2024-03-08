@@ -7,5 +7,7 @@ sati = float(input("Unesite broj radnih sati: "))
 satnica = float(input("Unesi satnicu: "))
 
 ukupno = total_euro(sati, satnica)
-print(ukupno)
+print("Radni sati: ", sati)
+print("eura/h: ", satnica)
+print("Ukupno:", ukupno)
 
