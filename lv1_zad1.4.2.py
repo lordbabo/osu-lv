@@ -1,26 +1,30 @@
 #zadatak 1.4.2
-ocjena = float(input("Upisi ocjenu izmedu 0.0 i 1.0: "))
+def ocjenjivanje(ocjena):
+    if (ocjena >= 0.9):
+        return "A"
 
-if (ocjena >= 0.9):
-    kategorija = "A"
+    elif (ocjena >=0.8):
+        return "B"
 
-elif (ocjena >=0.8):
-    kategorija = "B"
+    elif (ocjena >=0.7):
+        return "C"
 
-elif (ocjena >=0.7):
-    kategorija = "C"
+    elif (ocjena >=0.6):
+        return "D"
 
-elif (ocjena >=0.6):
-    kategorija = "D"
+    elif (ocjena <0.6):
+        return "F"
 
-elif (ocjena <0.6):
-    kategorija = "F"
-
-print(ocjena.isfloat())
-
-if((ocjena<0.0) or (ocjena>1.0)):
-    print("Upisao si broj van granica.")
-
-else:
-    print(kategorija)
+try:
+    ocjena = float(input("Upisi ocjenu izmedu 0.0 i 1.0: "))
+    if isinstance(ocjena, (float)):
+        if 0.0 <= ocjena <= 1.0:
+            kategorija = ocjenjivanje(ocjena)
+            print("Ocjena = ", kategorija)
+        else:
+            print("Ocjena izvan intervala 0.0 i 1.0")
+    else:
+        print("Uneseni podatak nije broj.")
+except ValueError:
+    print("Uneseni podatak nije broj")
 
