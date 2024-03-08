@@ -16,6 +16,11 @@ elif (ocjena >=0.6):
 elif (ocjena <0.6):
     kategorija = "F"
 
-print(kategorija)
+print(ocjena.isfloat())
 
+if((ocjena<0.0) or (ocjena>1.0)):
+    print("Upisao si broj van granica.")
+
+else:
+    print(kategorija)
 
